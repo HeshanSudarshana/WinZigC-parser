@@ -172,8 +172,6 @@ public class Parser {
             currentToken = getNextToken();
         } else {
             procName(parentNode);
-            // TODO: comment
-//            checkToken(currentToken, ";");
         }
     }
 
@@ -550,9 +548,6 @@ public class Parser {
         if (checkToken(currentToken, "otherwise")) {
             treeNode = addNode("otherwise", parentNode);
             procStatement(treeNode);
-        } else {
-            // TODO: comment
-//            checkToken(currentToken, ";");
         }
     }
 
@@ -716,10 +711,7 @@ public class Parser {
             treeNode = addNode("-", parentNode);
             procPrimary(treeNode);
         } else if (checkToken(currentToken, "+")) {
-            // TODO: correct according to grammar
-//            procPrimary(parentNode);
-            treeNode = addNode("+", parentNode);
-            procPrimary(treeNode);
+            procPrimary(parentNode);
         } else if (checkToken(currentToken, "not")) {
             treeNode = addNode("not", parentNode);
             procPrimary(treeNode);
